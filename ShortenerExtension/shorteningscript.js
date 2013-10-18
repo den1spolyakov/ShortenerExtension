@@ -4,7 +4,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
 
      $.ajax({
      	type: "POST",
-     	url: "http://shorten1.jelastic.neohost.net/add",
+     	url: "<name>",
              data: {url : activeTab.url},
      	success: function(response) {
      		$("#shortened").val(response);
