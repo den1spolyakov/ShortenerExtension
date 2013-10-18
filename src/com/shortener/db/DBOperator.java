@@ -40,8 +40,8 @@ public class DBOperator {
 	                ps.executeUpdate();
 	                rs = ps.getGeneratedKeys();
 	                if (rs.next()) {
-	            		int recordId = rs.getInt(1);
-		            	String encodedId = Encoder.encode(recordId);
+	                   int recordId = rs.getInt(1);
+		           String encodedId = Encoder.encode(recordId);
 		                query = "UPDATE urls SET code=(?) WHERE id=? ";
 		                ps = con.prepareStatement(query);
 		                ps.setString(1, encodedId);
