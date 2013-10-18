@@ -67,8 +67,8 @@ public class DBOperator {
 	                ps.setInt(1, Encoder.decode(code));
 	                rs = ps.executeQuery();
 	                if (rs.next()) {
-	            	String url = rs.getString("url");
-	            	return url.startsWith("http") ? url : "http://" + url;
+	            	    String url = rs.getString("url");
+	            	    return url.startsWith("http") ? url : "http://" + url;
 	                }
 	        } catch (SQLException ex) {
 	        	System.out.println("SqlException occured...");
