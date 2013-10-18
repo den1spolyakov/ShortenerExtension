@@ -11,7 +11,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
                      $("#shortened").select();
      	},
      	error: function(e) {
-     		console.log("Cannot connect!!!")
+     		console.log("Cannot connect!!!");
      	}
      });
      $("#copier").click(function(){
