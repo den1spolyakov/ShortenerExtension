@@ -8,9 +8,9 @@ chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
      	url: "http://shorten1.jelastic.neohost.net/add",
              data: {url : activeTab.url},
      	success: function(response) {
-     		 $("#shortened").val(response);
-                    $("#shortened").select();
-                    document.execCommand('copy');
+     		$("#shortened").val(response);
+                     $("#shortened").select();
+                     document.execCommand('copy');
      	},
      	error: function(e) {
      		console.log("Cannot connect!!!")
