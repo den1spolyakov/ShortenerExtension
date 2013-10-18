@@ -10,11 +10,14 @@ chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
      	success: function(response) {
      		$("#shortened").val(response);
                      $("#shortened").select();
-                     document.execCommand('copy');
      	},
      	error: function(e) {
      		console.log("Cannot connect!!!")
      	}
+     });
+     $("#copier").click(function(){
+          $("#shortened").select();
+          document.execCommand('copy');     
      });
      
   });
