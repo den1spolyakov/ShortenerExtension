@@ -8,7 +8,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
      	url: "http://shorten1.jelastic.neohost.net/add",
              data: {url : activeTab.url},
      	success: function(response) {
-     		$("#shortened").val(response);
+     		 $("#shortened").val(response);
                     $("#shortened").select();
                     document.execCommand('copy');
      	},
