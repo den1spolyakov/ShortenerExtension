@@ -22,10 +22,10 @@ public class MainController {
 		return DBOperator.addUrl(request.getParameter("url"));
 	}
     
-    @RequestMapping(value="/{name}", method=RequestMethod.GET)
-    public String findOwner(@PathVariable("name") String name, Model model) {
-    	model.addAttribute("link", DBOperator.getUrl(name));
-    	return "shortened";
-    }    
+	@RequestMapping(value="/{name}", method=RequestMethod.GET)
+	public String findOwner(@PathVariable("name") String name, Model model) {
+		model.addAttribute("link", DBOperator.getUrl(name));
+    		return "shortened";
+        }    
     
 }
