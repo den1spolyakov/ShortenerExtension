@@ -40,8 +40,8 @@ public class DBOperator {
 	                ps.executeUpdate();
 	                rs = ps.getGeneratedKeys();
 	                if (rs.next()) {
-	                       int recordId = rs.getInt(1);
-		               String encodedId = Encoder.encode(recordId);
+	                        int recordId = rs.getInt(1);
+		                String encodedId = Encoder.encode(recordId);
 		                query = "UPDATE urls SET code=(?) WHERE id=? ";
 		                ps = con.prepareStatement(query);
 		                ps.setString(1, encodedId);
@@ -58,22 +58,22 @@ public class DBOperator {
 	
 	public static String getUrl(String code) {
 		Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try {
-        	con = getConnection();
-        	String selectSQL = "SELECT url FROM urls WHERE id=?";
-            ps = con.prepareStatement(selectSQL);
-            ps.setInt(1, Encoder.decode(code));
-            rs = ps.executeQuery();
-            if (rs.next()) {
-            	String url = rs.getString("url");
-            	return url.startsWith("http") ? url : "http://" + url;
-            }
-        } catch (SQLException ex) {
-        	System.out.println("SqlException occured...");
-        }
-        return "";
+	        PreparedStatement ps = null;
+	        ResultSet rs = null;
+	        try {
+	        	con = getConnection();
+	        	String selectSQL = "SELECT url FROM urls WHERE id=?";
+	                ps = con.prepareStatement(selectSQL);
+	                ps.setInt(1, Encoder.decode(code));
+	                rs = ps.executeQuery();
+	                if (rs.next()) {
+	            		String url = rs.getString("url");
+	            		return url.startsWith("http") ? url : "http://" + url;
+	                }
+	        } catch (SQLException ex) {
+	        	System.out.println("SqlException occured...");
+	        }
+	        return "";
 	}
 
 }
