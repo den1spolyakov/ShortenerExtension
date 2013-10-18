@@ -16,13 +16,7 @@ import com.shortener.db.DBOperator;
 @Controller
 public class MainController {
 	
-	@RequestMapping(value="/addtest", method=RequestMethod.GET)
-	public String getTest() {
-		System.out.println("addtestijg");
-		return "addtest";
-	}
-	
-	@RequestMapping(value="/ShServer/add", method=RequestMethod.POST)
+	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public @ResponseBody String addUrl(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println(request.getParameter("url"));
 		return DBOperator.addUrl(request.getParameter("url"));
@@ -33,10 +27,5 @@ public class MainController {
     	model.addAttribute("link", DBOperator.getUrl(name));
     	return "shortened";
     }    
-    
-    @RequestMapping(value="/hello", method=RequestMethod.GET)
-    public String findOwner() {
-    	return "hello";
-    }  
     
 }
