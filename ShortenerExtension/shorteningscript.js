@@ -1,7 +1,6 @@
 chrome.tabs.query({active: true, currentWindow: true}, function(arrayOfTabs) {
 
      var activeTab = arrayOfTabs[0];
-     var activeTabId = arrayOfTabs[0].id;
 
      $.ajax({
      	type: "POST",
