@@ -12,9 +12,9 @@ import com.shortener.Encoder;
 
 public class DBOperator {
 	
-	private static String url = "jdbc:mysql://mysql-shorten1.jelastic.neohost.net/shorten";
-    private static String user = "root";
-    private static String password = "QLECNajRML";
+	private static String url = "";
+    private static String user = "";
+    private static String password = "";
 	
 	public static Connection getConnection() {
 		try {
